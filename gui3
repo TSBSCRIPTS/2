@@ -3,78 +3,19 @@ local httpService = game:GetService("HttpService")
 local InterfaceManager = {} do
     InterfaceManager.Folder = "FluentSettings"
     InterfaceManager.Settings = {
-        Theme = "SmoothRed", -- Set SmoothRed as the default theme
+        Theme = "Dark",
         Acrylic = true,
         Transparency = true,
         MenuKeybind = "LeftControl"
     }
 
     function InterfaceManager:SetFolder(folder)
-        self.Folder = folder
+        self.Folder = folder;
         self:BuildFolderTree()
     end
 
     function InterfaceManager:SetLibrary(library)
         self.Library = library
-
-        -- Ensure themes exist
-        self.Library.Themes = self.Library.Themes or {}
-
-        -- Existing Dark theme
-        self.Library.Themes.Dark = {
-            Name = "Dark",
-            Accent = Color3.fromRGB(96, 205, 255),
-            -- Other Dark theme properties as needed
-        }
-
-        -- Add SmoothRed theme
-        self.Library.Themes.SmoothRed = {
-            Name = "SmoothRed",
-            Accent = Color3.fromRGB(255, 70, 70),
-
-            AcrylicMain = Color3.fromRGB(50, 10, 10),
-            AcrylicBorder = Color3.fromRGB(80, 20, 20),
-            AcrylicGradient = ColorSequence.new(Color3.fromRGB(40, 10, 10), Color3.fromRGB(60, 15, 15)),
-            AcrylicNoise = 0.85,
-
-            TitleBarLine = Color3.fromRGB(90, 20, 20),
-            Tab = Color3.fromRGB(110, 30, 30),
-
-            Element = Color3.fromRGB(120, 40, 40),
-            ElementBorder = Color3.fromRGB(50, 20, 20),
-            InElementBorder = Color3.fromRGB(100, 40, 40),
-            ElementTransparency = 0.85,
-
-            ToggleSlider = Color3.fromRGB(130, 50, 50),
-            ToggleToggled = Color3.fromRGB(200, 60, 60),
-
-            SliderRail = Color3.fromRGB(140, 55, 55),
-
-            DropdownFrame = Color3.fromRGB(160, 60, 60),
-            DropdownHolder = Color3.fromRGB(50, 20, 20),
-            DropdownBorder = Color3.fromRGB(45, 25, 25),
-            DropdownOption = Color3.fromRGB(130, 50, 50),
-
-            Keybind = Color3.fromRGB(130, 50, 50),
-
-            Input = Color3.fromRGB(160, 70, 70),
-            InputFocused = Color3.fromRGB(30, 10, 10),
-            InputIndicator = Color3.fromRGB(150, 80, 80),
-
-            Dialog = Color3.fromRGB(60, 20, 20),
-            DialogHolder = Color3.fromRGB(45, 20, 20),
-            DialogHolderLine = Color3.fromRGB(35, 15, 15),
-            DialogButton = Color3.fromRGB(70, 30, 30),
-            DialogButtonBorder = Color3.fromRGB(90, 40, 40),
-            DialogBorder = Color3.fromRGB(80, 30, 30),
-            DialogInput = Color3.fromRGB(65, 25, 25),
-            DialogInputLine = Color3.fromRGB(160, 80, 80),
-
-            Text = Color3.fromRGB(240, 210, 210),
-            SubText = Color3.fromRGB(190, 150, 150),
-            Hover = Color3.fromRGB(160, 70, 70),
-            HoverChange = 0.08,
-        }
     end
 
     function InterfaceManager:BuildFolderTree()
